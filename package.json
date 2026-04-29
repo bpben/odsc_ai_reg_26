@@ -1,0 +1,13 @@
+{
+  "name": "odsc-ai-reg-26",
+  "private": true,
+  "scripts": {
+    "dev": "slidev slides.md",
+    "build": "slidev build slides.md",
+    "export": "slidev export slides.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.7.1",
+    "@slidev/theme-default": "^0.25.0"
+  }
+}
