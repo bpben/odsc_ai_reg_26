@@ -3,8 +3,10 @@ theme: default
 title: ODSC '26 - How I learned to stop worrying and love AI Regulation
 info: |
   ODSC '26 talk deck — outline verbatim from source notes.
-class: text-sm
 ---
+<div class="absolute inset-0">
+  <img src="/images/slides/speaker_slide.png" alt="Speaker slide" class="h-full w-full object-cover" />
+</div>
 
 ---
 layout: default
@@ -103,78 +105,64 @@ backgroundSize: contain
 [IAPP — US State AI Governance Legislation Tracker](https://iapp.org/resources/article/us-state-ai-governance-legislation-tracker) (last updated 3 Mar. 2026).
 
 ---
-layout: two-cols-header
-layoutClass: gap-4
-class: text-xs leading-snug opacity-90
+layout: image-right-caption
+image: /images/slides/science-obermeyer-racial-bias-health-algorithm.png
+backgroundSize: contain
 ---
 
-# Why this matters now
+# "Bad AI" is bad practice
+## Biased medical triage
+- Automated system for identifying patients for additional care
+- Prioritized white patients over sicker black patients
+- Based on medical costs, which have historical biases
 
-::left::
-
-<h4 class="m-0 mb-2 min-h-[2.8rem]">Suicides after interacting with chatbots</h4>
-
-![](/images/slides/cbs-character-ai-florida-settlement.png){class="max-h-[42vh] w-full object-contain"}
-
-Cara Tabachnick, [“AI company, Google settle lawsuit over Florida teen's suicide linked to Character.AI chatbot”](https://www.cbsnews.com/news/google-settle-lawsuit-florida-teens-suicide-character-ai-chatbot/), *CBS News*, 7 Jan. 2026.
-
-::right::
-
-<h4 class="m-0 mb-2 min-h-[2.8rem]">Non-consensual, illegal content generation</h4>
-
-![](/images/slides/ca-oag-bonta-xai-grok-investigation.png){class="max-h-[42vh] w-full object-contain"}
-
-California Office of the Attorney General, [“Attorney General Bonta Launches Investigation into xAI, Grok Over Undressed, Sexual AI Images of Women and Children”](https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai), *Press release*, 14 Jan. 2026.
-
----
-layout: two-cols-header
-layoutClass: gap-4
-class: text-xs leading-snug opacity-90
----
-
-# "Bad AI" is often just bad practice
-
-::left::
-
-<h4 class="m-0 mb-2 min-h-[2.8rem]">Bias due to poor data specification</h4>
-
-![](/images/slides/cbs-face-recognition-bias-problem.png){class="max-h-[42vh] w-full object-contain"}
-
-Irina Ivanova, [“Why face-recognition technology has a bias problem”](https://www.cbsnews.com/news/facial-recognition-systems-racism-protests-police-bias/), *CBS MoneyWatch*, 12 June 2020.
-
-::right::
-
-<h4 class="m-0 mb-2 min-h-[2.8rem]">Bias due to poor feature specification</h4>
-
-![](/images/slides/science-obermeyer-racial-bias-health-algorithm.png){class="max-h-[42vh] w-full object-contain"}
-
+::caption::
 Ziad Obermeyer et al., [“Dissecting racial bias in an algorithm used to manage the health of populations”](https://www.science.org/doi/10.1126/science.aax2342), *Science*, 25 Oct. 2019.
 
 ---
+layout: image-right-caption
+image: /images/slides/air-canada-chatbot-ars.png
+backgroundSize: contain
+---
+
+# "Bad AI" is bad practice (2)
+## Air Canada's AI chatbot
+
+> Air Canada argued that it could not be held responsible for the chatbot’s misleading information...the chatbot...should be considered a separate entity and, thus, absolve[s Air Canada] of any liability for its inaccuracies.
+
+> [McCarthy Tétrault - Moffatt v. Air Canada: Misrepresentation by AI Chatbot](https://www.mccarthy.ca/en/insights/blogs/techlex/moffatt-v-air-canada-misrepresentation-ai-chatbot)
+
+
+
+::caption::
+Ashley Belanger, [“Air Canada must honor refund policy invented by airline’s chatbot”](https://arstechnica.com/tech-policy/2024/02/air-canada-must-honor-refund-policy-invented-by-airlines-chatbot/), *Ars Technica*, 16 Feb. 2024.
+
+
+---
+
+# Three "pillars" of regulation
+
+- Governance - Policies for managing development, deployment and monitoring, including roles and remediation pathways
+- Assessment of risks and potential impact - Approach to assessment and mitigation strategies
+- Transparency - Clear documentation and disclosures to users, deployers and regulators
+
+---
 layout: quote-slide
 ---
 
-# Engineering guidance or Regulation?
-
-> **Establish governance documentation and processes**. Create comprehensive documentation of your sensitive data handling practices, including classification schemes, protection mechanisms, access control policies, and incident response procedures.
-
----
-layout: quote-slide
----
-
-# Engineering guidance or Regulation? (2)
+# Best Practice or Regulation?
 
 > **Establish governance documentation and processes**. Create comprehensive documentation of your sensitive data handling practices, including classification schemes, protection mechanisms, access control policies, and incident response procedures.
 
 ...
 
-> Privacy violations...mitigated through design choices that include privacy protections by default, ensuring that...only strictly necessary data for the context is collected
+> Privacy violations [are] mitigated through design choices that include privacy protections by default, ensuring that...only strictly necessary data for the context is collected
 
 ---
 layout: quote-slide
 ---
 
-# Engineering guidance or Regulation? (3)
+# Best Practice or Regulation? (2)
 
 > **Establish governance documentation and processes**. Create comprehensive documentation of your sensitive data handling practices, including classification schemes, protection mechanisms, access control policies, and incident response procedures.
 
@@ -190,15 +178,15 @@ layout: quote-slide
 
 # Governance
 
-- Policies for managing development, deployment and monitoring, including roles and remediation pathways (probably can extend this)
-- Key information needed
+- Policies for managing development, deployment and monitoring, including roles and remediation pathways
+- Covering the "life cycle" of the system
   - What is the use-case?
   - What data are you using?
-  - What is the model?
+  - What model are you using?
   - How do you measure performance?
   - How do you monitor post-deployment?
-  - What do you do if something goes wrong (e.g. drift)?
-  - What is your plan for "sunsetting"?
+  - What do you do if something goes wrong?
+  - What is the plan for "sunsetting"?
 
 ---
 layout: image-right-caption
@@ -251,7 +239,7 @@ backgroundSize: contain
 # Tools for implementing governance
 
 - Microsoft Agent Governance Framework (security-focused)
-- Vendor-provided tool
+- Vendor-provided tools
   - AWS Well-Architected Framework Tool
   - CredoAI
   - IBM watsonx.governance
@@ -264,7 +252,7 @@ Microsoft, [“Agent Governance Toolkit”](https://github.com/microsoft/agent-g
 layout: quote-slide
 ---
 
-# Engineering guidance or Regulation?
+# Best Practice or Regulation?
 
 > Training, validation and testing data sets [must] be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose 
 
@@ -272,16 +260,12 @@ layout: quote-slide
 
 > Training datasets are independent of test sets: Training and test datasets are selected and maintained to be appropriately independent of one another. 
 
-...
-
-> [Dataset s]lices should distinguish subsets of the data that might behave qualitatively differently, for example, users by country, users by frequency of use, or movies by genre. 
-
 
 ---
 layout: quote-slide
 ---
 
-# Engineering guidance or Regulation? (2)
+# Best Practice or Regulation? (2)
 
 > Training, validation and testing data sets [must] be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose
 
@@ -292,12 +276,6 @@ layout: quote-slide
 > Training datasets are independent of test sets: Training and test datasets are selected and maintained to be appropriately independent of one another.
 
 > <span style="color: #FF6B35">(IMDRF Good Machine Learning Principles)</span>
-
-...
-
-> [Dataset s]lices should distinguish subsets of the data that might behave qualitatively differently, for example, users by country, users by frequency of use, or movies by genre.
-
-> <span style="color: #FF6B35">(Breck et al., "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction," IEEE Big Data 2017.)</span>
 
 ---
 layout: image-right-caption
@@ -327,7 +305,7 @@ backgroundSize: contain
 
 # Impact assessment
 
-- What harms may come from the system and who will they effect?
+- What harms may come from the system and who will they affect?
 - Assess individual/group-level bias
   - Group - Does the model perform better for certain groups vs others?
   - Individual - Are similar individuals treated similarly?
@@ -346,7 +324,7 @@ backgroundSize: contain
 
 - PLOT4AI - Threat inventory and assessment framework for AI systems
 - IBM Fairness 360 - https://research.ibm.com/blog/ai-fairness-360
-  - Toolkit for applying some standardizes measures for bias
+  - Toolkit for applying some standard bias measures
 - Google "What if" - https://pair-code.github.io/what-if-tool/
   - Visual exploration of model results with built-in bias metrics
 - NIST - Risk Management Framework
@@ -360,7 +338,7 @@ Isabel Barberá, [“How does it work?”](https://plot4.ai/how-does-it-work), *
 layout: quote-slide
 ---
 
-# Engineering guidance or Regulation?
+# Best Practice or Regulation?
 
 > "Desired outcome: You can trace a data element back to its source, verify the transformations it underwent, and verify data integrity throughout the ML lifecycle." 
 
@@ -375,7 +353,7 @@ layout: quote-slide
 layout: quote-slide
 ---
 
-# Engineering guidance or Regulation? (2)
+# Best Practice or Regulation? (2)
 
 > "Desired outcome: You can trace a data element back to its source, verify the transformations it underwent, and verify data integrity throughout the ML lifecycle."
 
@@ -428,7 +406,7 @@ backgroundSize: contain
 # Tools for implementing transparency
 - Data Version Control (DVC) - open-source version control for data
   - Useful tools for documenting transformations, metrics
-- C2PA - Consortium for Open Packaging and Interchange
+- C2PA - Coalition for Content Provenance and Authenticity
   - Content credentials
 - Explainable AI (e.g. SHAP, LIME)
 
@@ -454,7 +432,7 @@ backgroundSize: contain
 
 # One neat trick: Model Cards
 
-- Model Cards for Model Reporting (Mitchell et. al. 2019)
+- Model Cards for Model Reporting (Mitchell et al. 2019)
 - Core elements
   - Model details (e.g. owner, type, version)
   - Intended use (e.g. intended use/users)
@@ -462,7 +440,7 @@ backgroundSize: contain
   - Metrics
   - Data - Evaluation and training
   - Quantitative Analysis
-  - Ethical consideration
+  - Ethical considerations
   - Caveats and Recommendations
 
 ::caption::
@@ -522,4 +500,56 @@ layoutClass: gap-4
 
 ## Get in touch
 - Website: [https://benbatorsky.com/](https://benbatorsky.com/)
-- Github: [bpben](https://github.com/bpben)
+- GitHub: [bpben](https://github.com/bpben)
+- These slides: [https://bpben.github.io/odsc_ai_reg_26](https://bpben.github.io/odsc_ai_reg_26)
+
+---
+layout: image-right-caption
+image: /images/distaval-ad-1958.png
+backgroundSize: contain
+---
+
+# The Rise of a "Safe" Sedative (1950s)
+
+Thalidomide (Distaval) was marketed worldwide as a non-toxic wonder drug.
+
+- **Marketed for:** Anxiety, sleep, and morning sickness
+- **The claim:** Harmless even for pregnant women
+
+::caption::
+
+[Advertisement for Distaval (thalidomide), 1958](https://www.researchgate.net/figure/Advertisement-for-Distaval-thalidomide-1958_fig4_223985310)
+
+---
+layout: image-right-caption
+image: /images/frances-kelsey.png
+backgroundSize: contain
+---
+
+# The FDA's refusal (1960)
+
+- FDA Reviewer Dr. Frances Kelsey refused to approve (1960)
+	- Application relied on testimonials, limited clinical data
+	- Reports of nerve damage in adults
+- Manufacturer aggressively pushed for approval
+> "Most of the things they called me, you wouldn’t print,” Dr. Kelsey later told the Washington Post.<sup>1</sup>
+
+::caption::
+Isabel Sans, [“Frances Oldham Kelsey: How an FDA Pharmacologist Prevented Thalidomide from Becoming a National Tragedy”](https://boundarystones.weta.org/2026/04/24/frances-oldham-kelsey-how-fda-pharmacologist-prevented-thalidomide-becoming-national#:~:text=Kelsey%20asked%20Merrell%20to%20send,Every%20delay%20was%20profit%20lost.), *Boundary Stones (WETA)*, 24 Apr. 2026. (image)
+
+<sup>1</sup> Seidman, Lisa A., and Noreen Warren. "Frances Kelsey & Thalidomide in the US: A Case Study Relating to Pharmaceutical Regulations." <em>The American Biology Teacher</em> 64, no. 7 (2002): 495-500.
+
+---
+layout: center
+---
+
+# Regulation makes the difference
+
+| Region | Regulatory context | Impact / outcome |
+| :--- | :--- | :--- |
+| **Europe & UK** | Approved | >10,000 children born with deformations. |
+| **United States** | Blocked by FDA | ~17 cases |
+
+<br>
+
+The 1962 Kefauver-Harris Amendment followed, mandating that drug makers prove a drug is both safe and effective before approval.
