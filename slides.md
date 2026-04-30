@@ -1,6 +1,7 @@
 ---
 theme: default
 title: ODSC '26 - How I learned to stop worrying and love AI Regulation
+css: style.css
 info: |
   ODSC '26 talk deck — outline verbatim from source notes.
 ---
