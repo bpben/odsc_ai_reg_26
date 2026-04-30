@@ -32,6 +32,10 @@ class: h-full
 
 </div>
 
+<div class="absolute bottom-2 left-0 right-0 text-center text-[10px] opacity-70">
+  AI coding assistance was used in developing these materials
+</div>
+
 ---
 layout: two-cols-header
 layoutClass: gap-2
